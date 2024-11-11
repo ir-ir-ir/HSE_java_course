@@ -62,7 +62,7 @@ public class Main {
     }
 
     //создание файла-ответа
-    static void create_answer (String[] count) {
+    static void createAnswer (String[] count) {
         // Будем создавать файл answer рядом с файлом, путь до которого передал пользователь
         // Находим путь до необходимой папки:
         int last_ch = 0; // индекс последнего '\' в пути, введеном пользователем
@@ -107,7 +107,7 @@ public class Main {
         //обработка исключения при открытии потока на запись (path)
         try {
             String[] arr = path();
-            create_answer(arr);
+            createAnswer(arr);
         }
         catch (IOException obj)
         {
