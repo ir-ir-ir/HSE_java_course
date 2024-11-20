@@ -26,7 +26,7 @@ public class Main {
 
     static void apply (){
         Person person = gettingData();
-        person.initials_gender();
+        person.initialsGender();
         person.years();
     }
 

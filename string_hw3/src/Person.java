@@ -65,7 +65,7 @@ public class Person {
     }
 
     // инициалы и определение пола
-    void initials_gender(){
+    void initialsGender(){
         StringTokenizer fio = new StringTokenizer(name);
         String F = ""; // фамилия
         String I = ""; // имя
