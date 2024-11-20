@@ -1,3 +1,4 @@
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.StringTokenizer;
 
@@ -39,10 +40,18 @@ public class Person {
 
         //валидный день, месяц, год
         int day = Integer.parseInt(String.valueOf(date[0]) + String.valueOf(date[1]));
-        if (( day > 31) || ( day < 1)) {throw new PersonException();}
         int mounth = Integer.parseInt(String.valueOf(date[3]) + String.valueOf(date[4]));
-        if ( (mounth > 12) || (mounth < 1) ) {throw new PersonException();}
         int year = Integer.parseInt(String.valueOf(date[6]) + String.valueOf(date[7]) + String.valueOf(date[8]) + String.valueOf(date[9]));
+
+        // если не можем создать объект, пользователь ввел неверную дату
+        try{
+            LocalDate birth = LocalDate.of(year, mounth, day);
+        }
+        catch (DateTimeException obj) {
+            System.out.println("Неправильный ввод данных!");
+            System.exit(0);
+        }
+
         LocalDate currentDate = LocalDate.now(); // текущая дата
         LocalDate dr = LocalDate.of(year, mounth, day); // дата рождения
         // если дата рождения > текущая дата
