@@ -4,14 +4,14 @@ import java.net.URL;
 
 public class Main {
 
-    static void connection(String str_url) {
+    static void connection(String strUrl) {
 
         System.out.println();
         System.out.println("Response: ");
 
         try {
             // создание url
-            URL url = new URL(str_url);
+            URL url = new URL(strUrl);
             // подключение к ресурсу
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.connect();
